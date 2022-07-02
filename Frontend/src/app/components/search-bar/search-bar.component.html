@@ -1,6 +1,5 @@
+<city-result [city]="selectedCity"></city-result>
 <div>
-  <h1>Live Cities Search</h1>
-  <p class="result">Result: <b>{{(selectedCity | async)?.cityName}}</b></p>
   <input [formControl]="autoCompleteSubstringForm" name="search-box" class="search-box">
 </div>
 <section class="search-results">
