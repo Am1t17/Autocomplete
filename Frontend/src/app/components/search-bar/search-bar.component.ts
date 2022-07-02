@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {debounceTime, distinctUntilChanged, filter, map, Observable, retry, Subject, switchMap} from "rxjs";
 import {City} from "../../app.component";
-import {AutoCompleteService} from "../../service/auto-complete.service";
-import {GetCityByIdService} from "../../service/get-city-by-id.service";
+import {AutoCompleteService} from "../../services/auto-complete.service";
+import {GetCityByIdService} from "../../services/get-city-by-id.service";
 
 const LIMIT_AUTO_COMPLETE = 10;
 
