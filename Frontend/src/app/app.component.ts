@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {AutoCompleteService} from "./service/auto-complete.service";
+import {Component} from '@angular/core';
 
 export interface City {
   id: number,
@@ -12,21 +11,6 @@ export interface City {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private cityService: AutoCompleteService) {
-
+  constructor() {
   }
-
-  cities: City[] = [];
-  substring: string = "";
-
-  sendData(event: any) {
-    this.substring = event.target.value;
-    this.cityService.getCities(this.substring).subscribe(
-      (cities: any) => {
-        this.cities = cities.result;
-      }
-    );
-  }
-
-
 }

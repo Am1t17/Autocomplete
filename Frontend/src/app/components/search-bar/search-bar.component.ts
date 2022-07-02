@@ -7,12 +7,13 @@ import {GetCityByIdService} from "../../service/get-city-by-id.service";
 
 const LIMIT_AUTO_COMPLETE = 10;
 
+
 @Component({
-  selector: 'test-form',
-  templateUrl: './test-form.component.html',
-  styleUrls: ['./test-form.component.css']
+  selector: 'search-bar',
+  templateUrl: './search-bar.component.html',
+  styleUrls: ['./search-bar.component.css']
 })
-export class TestFormComponent implements OnInit {
+export class SearchBarComponent implements OnInit {
   autoCompleteSubstringForm: FormControl = new FormControl('')
   observableResult?: Observable<City[]>
   results2: City[] = [];
@@ -60,7 +61,6 @@ export class TestFormComponent implements OnInit {
             }
           })
         }
-
       }
     );
 
@@ -80,4 +80,5 @@ export class TestFormComponent implements OnInit {
   onClickCity(city: City) {
     this.selectedCityId.next(city);
   }
+
 }

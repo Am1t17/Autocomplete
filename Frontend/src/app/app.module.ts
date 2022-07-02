@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
-import { TestFormComponent } from './form/test-form/test-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestFormComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,

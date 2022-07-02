@@ -4,15 +4,15 @@
   <input [formControl]="autoCompleteSubstringForm" name="search-box" class="search-box">
 </div>
 <section class="search-results">
-<!--  <div *ngFor="let city of observableResult| async">-->
-<!--    <button class="button"  (click)="onClickCity(city)">-->
-<!--      {{city.cityName}}-->
-<!--    </button>  </div>-->
-
-    <div *ngFor="let city of results2">
+    <div *ngFor="let city of observableResult| async">
       <button class="button"  (click)="onClickCity(city)">
         {{city.cityName}}
-      </button>
-    </div>
+      </button>  </div>
+
+<!--  <div *ngFor="let city of results2">-->
+<!--    <button class="button"  (click)="onClickCity(city)">-->
+<!--      {{city.cityName}}-->
+<!--    </button>-->
+<!--  </div>-->
 </section>
 
