@@ -1,0 +1,55 @@
+h1{
+  text-align: center;
+  padding: 60px 0;
+  background-color: #E8ECEF;
+  font-size: 3.3rem;
+}
+
+.search-box{
+  display: block;
+  margin: 10px auto 0 auto;
+  padding: 10px 20px;
+  max-width: 300px;
+  width: 30%;
+}
+
+.search{
+  display: flex;
+}
+
+.result{
+  display: block;
+  margin: 0 auto 0 auto;
+  padding: 10px 20px;
+  max-width: 300px;
+  width: 30%;
+
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
+  width: 100%;
+  cursor: pointer;
+  margin: 5px;
+}
+
+
+.search-results{
+  max-width: 300px;
+  width: 70%;
+  margin: 20px auto 0 auto;
+}
+
+hr{
+  border: none;
+  height: 1px;
+  background-color: lightgray;
+}
+p{
+  margin: 10px 0;
+}
