@@ -1,4 +1,4 @@
-<city-result [city]="selectedCity"></city-result>
+<city-result [city$]="selectedCity$"></city-result>
 <div>
   <input [formControl]="autoCompleteSubstringForm" name="search-box" class="search-box">
 </div>
@@ -6,7 +6,8 @@
     <div *ngFor="let city of observableResult| async">
       <button class="button"  (click)="onClickCity(city)">
         {{city.cityName}}
-      </button>  </div>
+      </button>
+    </div>
 
 <!--  <div *ngFor="let city of results2">-->
 <!--    <button class="button"  (click)="onClickCity(city)">-->

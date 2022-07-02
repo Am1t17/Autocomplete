@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {City} from "./auto-complete.service";
+import {environment} from "../../environments/environment";
+import {City} from "../models/City";
 
 
 @Injectable({
@@ -12,7 +13,8 @@ export class GetCityByIdService {
   constructor(private http: HttpClient) {
   }
 
-  getCityById(cityId: number): Observable<any> {
-    const cityIdPath = `https://localhost:7065/api/Cities/${cityId}`;
-    return this.http.get<City[]>(cityIdPath)
-  }}
+  getCityById(cityId: number): Observable<City> {
+    const cityIdPath = `${environment.host}/api/Cities/${cityId}`;
+    return this.http.get<City>(cityIdPath)
+  }
+}

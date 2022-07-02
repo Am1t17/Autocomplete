@@ -12,16 +12,16 @@ namespace Cities.API.Services
             this.citiesDbContext = citiesDbContext;
         }
 
-        public  IQueryable<City> AutoCompleteSearch(string substring, int limit)
+        public async Task<List<City>> AutoCompleteSearch(string substring, int limit, CancellationToken ct)
         {
-            return  citiesDbContext.Cities.
-                Where(city => city.CityName.StartsWith(substring)).
-                Take(limit);
+            return  await citiesDbContext.Cities
+                .Where(city => city.CityName.StartsWith(substring))
+                .Take(limit).ToListAsync<City>(ct);
         }
 
-        public async Task<City?> GetCityById(int id, CancellationToken cancellationToken)
+        public async Task<City?> GetCityById(int id, CancellationToken ct)
         {
-            return await citiesDbContext.Cities.SingleOrDefaultAsync(c => c.Id == id, cancellationToken);
+            return await citiesDbContext.Cities.SingleOrDefaultAsync(c => c.Id == id, ct);
         }
     }
 }

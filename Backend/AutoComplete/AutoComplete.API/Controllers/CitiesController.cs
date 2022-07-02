@@ -18,13 +18,13 @@ namespace Cities.API.Controllers
 
 
         [HttpGet("AutoComplete")]
-        public  ActionResult<IQueryable<City>> AutoCompleteSearch([FromQuery] string? substring = "", [FromQuery] int limit = 10)
+        public async Task<ActionResult<List<City>>> AutoCompleteSearch([FromQuery] string? substring = "", [FromQuery] int limit = 10, CancellationToken ct = default)
         {
             try
             {
                 if (string.IsNullOrEmpty(substring))
                     substring = "";
-                var results = citiesService.AutoCompleteSearch(substring, limit);
+                var results = await citiesService.AutoCompleteSearch(substring, limit, ct);
                 return Ok(results);
             }
             catch (Exception e)
@@ -39,6 +39,7 @@ namespace Cities.API.Controllers
         {
             try
             {
+
                 if (!int.TryParse(id, out int cityId))
                 {
                     return BadRequest("could not convert: " + id + " to integer");
