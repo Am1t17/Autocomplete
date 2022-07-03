@@ -1,4 +1,10 @@
 
-<ng-container *ngIf="city$ | async as city">
-  <p class="result">Result: <b>{{city.cityName}}</b></p>
+<ng-container *ngIf="city$ | async as resource">
+  <ng-container *ngIf="isCity(resource); else error_content ">
+    <p class="result">Result: <b>{{resource.cityName}}</b></p>
+  </ng-container>
+  <ng-template #error_content >
+    <p class="result" *ngIf="!isCity(resource)"><b>{{resource.message}}</b></p>
+  </ng-template>
+
 </ng-container>
