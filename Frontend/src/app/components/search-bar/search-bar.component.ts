@@ -19,7 +19,7 @@ import {GetCityByIdService} from "../../services/get-city-by-id.service";
 
 const LIMIT_AUTO_COMPLETE = 10;
 
-export type citiesResults = City[] | Error | null;
+export type citiesResults = City[] | Error;
 
 @Component({
   selector: 'search-bar',
