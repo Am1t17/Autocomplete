@@ -26,9 +26,7 @@ const LIMIT_AUTO_COMPLETE = 10;
 })
 export class SearchBarComponent implements OnInit{
   autoCompleteSubstringForm: FormControl = new FormControl('')
-  observableResult?: Observable<City[]>
-  results2: City[] = [];
-  currentSubstring: string = "";
+  observableResult!: Observable<City[]>
   selectedCityId$ = new Subject<City>()
   selectedCity$!:Observable<City | undefined>;
   temp:City[] = [];
@@ -48,36 +46,6 @@ export class SearchBarComponent implements OnInit{
         )
       )
     )
-
-    // this.autoCompleteSubstringForm.valueChanges.pipe(
-    //   map((substring) => substring.trim()),
-    //   debounceTime(300),
-    //   distinctUntilChanged(),
-    //   filter(search => search !== ''),
-    //   switchMap((substring: string) => {
-    //     if (this.currentSubstring.length >= substring.length) {
-    //       this.results2 = [];
-    //     }
-    //     this.results2 = this.results2.filter((city) => city.cityName.toLowerCase().startsWith(substring.toLowerCase()))
-    //     this.currentSubstring = substring;
-    //
-    //     return this.cityService.getCities(substring, LIMIT_AUTO_COMPLETE).pipe(
-    //       retry(3)
-    //     )
-    //   })
-    // ).subscribe(
-    //   (x) => {
-    //     if (this.results2.length === 0) {
-    //       this.results2 = x;
-    //     } else {
-    //       x.forEach((cityResponse: City) => {
-    //         if (this.results2.find(city => city.cityName !== cityResponse.cityName)) {
-    //           this.results2.push(cityResponse);
-    //         }
-    //       })
-    //     }
-    //   }
-    // );
 
     this.observableResult = this.autoCompleteSubstringForm.valueChanges.pipe(
       map((substring) => substring.trim()),
