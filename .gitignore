@@ -1,4 +1,4 @@
 .idea
-.dll
-.cache
-.vsidx
+*.dll
+*.cache
+*.vsidx
